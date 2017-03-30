@@ -22,7 +22,8 @@ module.exports = {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
-        }
+        },{test:/\.scss$/,loader:"style!css!sass"},
+          {test:/\.jpg$/,loader:"file-loader"}
         ]
     },
     plugins: [
