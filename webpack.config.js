@@ -9,7 +9,7 @@ module.exports = {
         './src'
     ],
     output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'src'),
         filename: 'bundle.js'
     },
     resolve: {
@@ -22,12 +22,13 @@ module.exports = {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
-        },{test:/\.scss$/,loader:"style!css!sass"},
-          {test:/\.jpg$/,loader:"file-loader"}
-        ]
+        },
+        {test:/\.scss$/,loader:"style!css!sass"}
+
+      ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ]
 };
